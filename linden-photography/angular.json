@@ -20,7 +20,7 @@
             "outputPath": "../docs",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/linden-photography/",
+            "baseHref": "/",
             "polyfills": [
               "zone.js"
             ],
@@ -49,6 +49,7 @@
                   "maximumError": "4kb"
                 }
               ],
+              "baseHref": "/linden-photography/",
               "outputHashing": "all"
             },
             "development": {
