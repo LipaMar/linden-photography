@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarComponent } from './navbar.component';
@@ -8,7 +9,8 @@ describe('NavbarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NavbarComponent]
+      declarations: [NavbarComponent],
+      imports: [CommonModule],
     });
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
