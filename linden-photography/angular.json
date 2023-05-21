@@ -20,7 +20,7 @@
             "outputPath": "../docs",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/",
+            "baseHref": "/linden-photography",
             "polyfills": [
               "zone.js"
             ],
