@@ -1,2 +1,16 @@
-<h1>Linden Photography</h1>
-<h2 style="color: deeppink">Anna Lipa</h2>
+<div class="menu">
+  <button mat-button>O mnie</button>
+  <button mat-button [matMenuTriggerFor]="portfolio">Portfolio</button>
+  <mat-menu #portfolio="matMenu" yPosition="below">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+  <div class="">
+    <img src="../../../assets/img/logo/logo.png" aria-label="linden-photography" width="100px"/>
+    <h2 style="color: deeppink">Anna Lipa</h2>
+  </div>
+<button mat-button>Kontakt</button>
+  <button mat-button>Panel klienta</button>
+  <button mat-button>Panel klienta</button>
+</div>
+

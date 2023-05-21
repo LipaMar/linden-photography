@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './contact.component';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialsModule } from '../../../shared/materials/materials.module';
 
 @NgModule({
   declarations: [ContactComponent],
@@ -13,11 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     CommonModule,
     ReactiveFormsModule,
-    MatInputModule,
-    MatIconModule,
     FormsModule,
-    MatFormFieldModule,
+    MaterialsModule,
   ],
-  exports: [ContactComponent]
+  exports: [ContactComponent],
 })
 export class ContactModule {}
