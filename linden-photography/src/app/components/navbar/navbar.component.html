@@ -1,16 +1,20 @@
-<div class="menu">
-  <button mat-button>O mnie</button>
-  <button mat-button [matMenuTriggerFor]="portfolio">Portfolio</button>
-  <mat-menu #portfolio="matMenu" yPosition="below">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-  <div class="">
-    <img src="../../../assets/img/logo/logo.png" aria-label="linden-photography" width="100px"/>
-    <h2 style="color: deeppink">Anna Lipa</h2>
-  </div>
-<button mat-button>Kontakt</button>
-  <button mat-button>Panel klienta</button>
-  <button mat-button>Panel klienta</button>
+<div routerLink="/home" class="header">
+  <h1>Linden Photography</h1>
+  <h2>Anna Lipa</h2>
 </div>
 
+<div class="menu">
+  <button mat-button routerLink="/home">Home</button>
+  <button mat-button [matMenuTriggerFor]="portfolio">Portfolio</button>
+  <button mat-button>O mnie</button>
+  <button mat-button>Strefa klienta</button>
+  <button mat-button routerLink="/contact">Kontakt</button>
+</div>
+
+<mat-menu #portfolio="matMenu" yPosition="below" class="dropdown">
+  <button mat-menu-item>Sesja Portretowa</button>
+  <button mat-menu-item>Chrzest Święty</button>
+  <button mat-menu-item>Urodziny/Osiemnastka</button>
+  <button mat-menu-item>Studiówka/Półmetek</button>
+  <button mat-menu-item>Komunia Święta</button>
+</mat-menu>
