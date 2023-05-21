@@ -4,9 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from '../../../shared/materials/materials.module';
+import { FormInputComponent } from './form-input/form-input.component';
 
 @NgModule({
-  declarations: [ContactComponent],
+  declarations: [ContactComponent, FormInputComponent],
   imports: [
     BrowserAnimationsModule,
     CommonModule,

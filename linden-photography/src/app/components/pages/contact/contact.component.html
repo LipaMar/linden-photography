@@ -1,16 +1,23 @@
-<p>Nareszcie nadeszła pora na ciebie! Bardzo się cieszę i czekam niecierpliwie na twój formularz!</p>
-Imię
-Nazwisko
-Temat zapytania
-Data
-E-mail
-Numer telefonu
-<form [formGroup]="form">
-<mat-form-field class="first-name">
-  <mat-label>Clearable input</mat-label>
-  <input matInput type="text" formControlName="firstName">
-  <button matSuffix mat-icon-button aria-label="Clear">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-</form>
+<div class="content">
+  <form [formGroup]="form">
+    <div class="container">
+      <p>Nareszcie nadeszła pora na ciebie!</p>
+      <p>Bardzo się cieszę i czekam niecierpliwie na twój formularz!</p>
+      <div class="name">
+        <app-form-input formControlName="firstName">Imię</app-form-input>
+        <app-form-input formControlName="lastName">Nazwisko</app-form-input>
+      </div>
+      <div class="topic">
+        <mat-form-field appearance="outline">
+          <mat-label>Temat zapytania</mat-label>
+          <textarea formControlName="topic" matInput></textarea>
+        </mat-form-field>
+      </div>
+      <div class="contact">
+        <app-form-input formControlName="email">E-mail</app-form-input>
+        <app-form-input formControlName="phoneNr">Numer telefonu</app-form-input>
+      </div>
+      <button (click)="sendForm()" mat-raised-button color="accent">Wyślij formularz</button>
+    </div>
+  </form>
+</div>

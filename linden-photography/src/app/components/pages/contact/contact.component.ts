@@ -9,10 +9,14 @@ import { ContactForm } from './contact-form';
 })
 export class ContactComponent {
   form: FormGroup = new FormGroup<ContactForm>({
-    firstName: new FormControl(null),
-    lastName: new FormControl(null),
-    email: new FormControl(null),
-    phoneNr: new FormControl(null),
-    topic: new FormControl(null),
+    firstName: new FormControl(),
+    lastName: new FormControl(),
+    email: new FormControl(),
+    phoneNr: new FormControl(),
+    topic: new FormControl(),
   });
+
+  sendForm() {
+    console.log(this.form.value);
+  }
 }
