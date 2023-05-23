@@ -1,5 +1,5 @@
-import {Component, forwardRef} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import { Component, forwardRef, Input } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-form-input',
@@ -9,20 +9,18 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: forwardRef(() => FormInputComponent)
-    }
-  ]
+      useExisting: forwardRef(() => FormInputComponent),
+    },
+  ],
 })
 export class FormInputComponent implements ControlValueAccessor {
-
+  @Input() type: 'textarea' | 'input' = 'input';
   isDisabled: boolean = false;
-  value: string = "";
+  value: string = '';
 
-  onChange: any = () => {
-  }
+  onChange: any = () => {};
 
-  onTouch: any = () => {
-  }
+  onTouch: any = () => {};
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -38,7 +36,5 @@ export class FormInputComponent implements ControlValueAccessor {
 
   writeValue(obj: string): void {
     this.value = obj;
-    console.log(this.value)
   }
-
 }
