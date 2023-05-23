@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { INavbar } from './navbar.interfaces';
 
 @Component({
   selector: 'app-navbar',
@@ -6,4 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
+  menu: INavbar[] = [
+    { label: 'Home', routerLink: '/home' },
+    { label: 'Portfolio', options: [] },
+    { label: 'O mnie' },
+    { label: 'Strefa klienta' },
+    { label: 'Kontakt', routerLink: '/contact' },
+  ];
 }

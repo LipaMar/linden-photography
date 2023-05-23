@@ -1,19 +1,26 @@
 <div routerLink="/home" class="header">
-  <img src="https://i.ibb.co/C9gktJh/logo.png" alt="logo">
+  <img src="https://i.ibb.co/C9gktJh/logo.png" alt="logo" />
 </div>
 
 <div class="menu">
-  <button mat-button routerLink="/home">Home</button>
-  <button mat-button [matMenuTriggerFor]="portfolio">Portfolio</button>
-  <button mat-button>O mnie</button>
-  <button mat-button>Strefa klienta</button>
-  <button mat-button routerLink="/contact">Kontakt</button>
+  <ng-container *ngFor="let item of menu; index as i">
+    <p-button
+      styleClass="p-button-text p-button-sm"
+      [label]="item.label"
+      [routerLink]="item.routerLink"
+    />
+    <ng-component *ngTemplateOutlet="dropdown; context: { options: item.options}" />
+  </ng-container>
 </div>
 
-<mat-menu #portfolio="matMenu" yPosition="below" class="dropdown">
-  <button mat-menu-item>Sesja Portretowa</button>
-  <button mat-menu-item>Chrzest Święty</button>
-  <button mat-menu-item>Urodziny/Osiemnastka</button>
-  <button mat-menu-item>Studiówka/Półmetek</button>
-  <button mat-menu-item>Komunia Święta</button>
-</mat-menu>
+<ng-template #dropdown let-options="options">
+  <div class="dropdown">
+    <ng-container *ngFor="let item of options; index as i">
+      <p-button
+        styleClass="p-button-text p-button-sm"
+        [label]="item.label"
+        [routerLink]="item.routerLink"
+      />
+    </ng-container>
+  </div>
+</ng-template>

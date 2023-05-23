@@ -5,8 +5,6 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './components/pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -19,8 +17,6 @@ import { RouterModule } from '@angular/router';
     PagesModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([]),
-    MatInputModule,
-    MatIconModule,
     NavbarModule,
     CommonModule,
     FormsModule,
