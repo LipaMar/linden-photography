@@ -27,6 +27,7 @@
 @import "bootstrap/scss/utilities/api";
 
 $font-color: #505051;
+$font-family: "Gabriola", sans-serif;
 $font-color-hover: rgba(80, 80, 81, 0.5);
 $font-size: 20px;
 
@@ -49,7 +50,7 @@ body {
 
 .p-dropdown-label,
 .p-button-label {
-  font-family: "Gabriola", sans-serif !important;
+  font-family: $font-family !important;
   font-size: $font-size;
   font-weight: 100;
 }

@@ -1,33 +1,24 @@
+@import "src/styles";
 .content {
   width: 70%;
   margin: 50px auto;
+
+  p {
+    text-align: center;
+    font-size: 40px;
+    font-family: $font-family;
+  }
+
+  app-form-input {
+    flex-grow: 1;
+  }
+
+  .form-items {
+    width: 70%;
+
+    div > * {
+      margin: 0.69rem;
+    }
+  }
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.container > div {
-  width: 65%;
-}
-
-.container > div > * {
-  margin: 0 10px;
-}
-
-.name, .contact {
-  display: flex;
-  flex-direction: row;
-}
-
-p {
-  text-align: center;
-  font-size: 40px;
-}
-
-app-form-input {
-  flex-grow: 1;
-}
