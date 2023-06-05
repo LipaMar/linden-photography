@@ -1,20 +1,39 @@
 <div class="content animate">
-  <form [formGroup]="form">
+  <form #form action="https://formsubmit.co/41eefae3b21ffb29c4d31d39d3e3d7b8" method="POST" target="_blank">
     <div class="d-flex flex-column">
       <p>Nareszcie nadeszła pora na ciebie!</p>
       <p>Bardzo się cieszę i czekam niecierpliwie na twój formularz!</p>
       <div class="d-flex justify-content-center">
         <div class="form-items">
           <div class="d-flex flex-row">
-            <app-form-input formControlName="email">E-mail</app-form-input>
-            <app-form-input formControlName="phoneNr">Numer telefonu</app-form-input>
+            <span class="p-float-label">
+              <input class="w-100" name="email" pInputText/>
+              <label>E-mail</label>
+            </span>
+            <span class="p-float-label">
+              <input class="w-100" name="Numer telefonu" pInputText/>
+              <label>Numer telefonu</label>
+            </span>
           </div>
           <div class="d-flex flex-row">
-            <app-form-input type="textarea" formControlName="topic">Temat zapytania</app-form-input>
+            <span class="p-float-label">
+              <textarea class="w-100" [rows]="5" [autoResize]="true" name="Temat zapytania" pInputTextarea></textarea>
+              <label>Temat zapytania</label>
+            </span>
           </div>
           <div class="d-flex flex-row">
-            <app-form-input formControlName="firstName">Imię i nazwisko</app-form-input>
-            <p-button class="d-flex align-items-center" (click)="sendForm()">Wyślij formularz</p-button>
+
+            <span class="p-float-label">
+              <input class="w-100" name="name" pInputText/>
+              <label>Imię</label>
+            </span>
+            <span class="p-float-label">
+              <input class="w-100" name="Nazwisko" pInputText/>
+              <label>Nazwisko</label>
+            </span>
+            <input name="_captcha" value="false" type="hidden"/>
+            <input name="_template" value="table" type="hidden">
+            <p-button class="d-flex align-items-center" (click)="form.submit()">Wyślij formularz</p-button>
           </div>
         </div>
       </div>

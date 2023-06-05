@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormInputComponent } from './form-input/form-input.component';
 import { PrimeNgModule } from '../../../shared/modules/primeng.module';
 
 @NgModule({
-  declarations: [ContactComponent, FormInputComponent],
+  declarations: [ContactComponent],
   imports: [
     BrowserAnimationsModule,
     CommonModule,
