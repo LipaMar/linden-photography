@@ -36,6 +36,5 @@ export class FormInputComponent implements ControlValueAccessor {
 
   writeValue(obj: string): void {
     this.value = obj;
-    console.log('huj');
   }
 }
