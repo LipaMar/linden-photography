@@ -1,3 +1,4 @@
+import { NgZorroModule } from './../../shared/modules/ngzorro.module';
 import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavbarComponent } from './navbar.component';
@@ -11,7 +12,12 @@ describe('NavbarComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [NavbarComponent],
-      imports: [CommonModule, RouterModule.forRoot([]), PrimeNgModule],
+      imports: [
+        CommonModule,
+        RouterModule.forRoot([]),
+        PrimeNgModule,
+        NgZorroModule,
+      ],
     });
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
