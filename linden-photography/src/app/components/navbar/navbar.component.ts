@@ -22,7 +22,7 @@ export class NavbarComponent {
         { label: 'Komunia Święta', routerLink: '/' },
       ],
     },
-    { label: 'O mnie' },
+    { label: 'O mnie', routerLink: '/aboutMe' },
     { label: 'Strefa klienta' },
     { label: 'Kontakt', routerLink: '/contact' },
   ];
