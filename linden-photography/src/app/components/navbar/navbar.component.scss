@@ -1,3 +1,5 @@
+@import "./../../../assets/scss/variables.scss";
+
 .header {
   display: flex;
   justify-content: center;
@@ -14,4 +16,32 @@
   align-items: center;
   gap: 2rem;
   padding-bottom: 1rem;
+}
+
+::ng-deep.p-button,
+.p-button-text {
+  background-color: $bg-white;
+  color: $font-color;
+  text-align: left;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+
+  &:enabled &:hover,
+  &:focus,
+  &:visited,
+  &:focus-within,
+  &:focus-visible,
+  &:active,
+  &:target,
+  &:enabled:hover {
+    color: $font-color-hover;
+    background-color: $bg-white;
+    box-shadow: none;
+    outline: none;
+    border: none;
+  }
 }
