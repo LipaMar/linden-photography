@@ -4,23 +4,27 @@
 
 <div class="menu animate">
   <ng-container *ngFor="let item of menu; index as i">
-    <p-button
-      styleClass="p-button-text p-button-sm"
-      [label]="item.label"
-      [routerLink]="item.routerLink"
-    />
-    <ng-component *ngTemplateOutlet="dropdown; context: { options: item.options}" />
+    <div nz-dropdown [nzDropdownMenu]="item.options ? dropdown : null">
+      <ng-container
+        *ngTemplateOutlet="navbutton; context: { item, mouseover: true }"
+      />
+    </div>
   </ng-container>
 </div>
 
-<ng-template #dropdown let-options="options">
-  <div class="dropdown">
+<nz-dropdown-menu #dropdown="nzDropdownMenu">
+  <div class="d-flex flex-column">
     <ng-container *ngFor="let item of options; index as i">
-      <p-button
-        styleClass="p-button-text p-button-sm"
-        [label]="item.label"
-        [routerLink]="item.routerLink"
-      />
+      <ng-container *ngTemplateOutlet="navbutton; context: { item }"/>
     </ng-container>
   </div>
+</nz-dropdown-menu>
+
+<ng-template #navbutton let-item="item" let-mouseover="mouseover">
+  <p-button
+    styleClass="buttonek"
+    [label]="item.label"
+    [routerLink]="item.routerLink"
+    (mouseover)="mouseover ? setOptions(item.options) : null"
+  />
 </ng-template>
