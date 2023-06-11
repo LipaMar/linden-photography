@@ -15,7 +15,7 @@
 <nz-dropdown-menu #dropdown="nzDropdownMenu">
   <div class="d-flex flex-column">
     <ng-container *ngFor="let item of options; index as i">
-      <ng-container *ngTemplateOutlet="navbutton; context: { item }" />
+      <ng-container *ngTemplateOutlet="navbutton; context: { item }"/>
     </ng-container>
   </div>
 </nz-dropdown-menu>

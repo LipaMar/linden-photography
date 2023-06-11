@@ -2,6 +2,7 @@ import { Component, HostBinding } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ContactForm } from './contact-form';
 import { pageAnimations } from '../../../animations';
+import { EmailSendService } from '../../../services/email/email-send.service';
 
 @Component({
   selector: 'app-contact',
@@ -12,14 +13,15 @@ import { pageAnimations } from '../../../animations';
 export class ContactComponent {
   @HostBinding('@pageAnimations')
   form: FormGroup = new FormGroup<ContactForm>({
-    firstName: new FormControl(),
-    lastName: new FormControl(),
+    name: new FormControl(),
     email: new FormControl(),
     phoneNr: new FormControl(),
     topic: new FormControl(),
   });
 
-  sendForm() {
-    console.log(this.form.value);
+  constructor(private emailService: EmailSendService) {}
+
+  submitForm() {
+    this.emailService.sendViaHttpClient(this.form.value).subscribe();
   }
 }
