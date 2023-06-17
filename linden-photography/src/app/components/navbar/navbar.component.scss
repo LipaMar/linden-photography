@@ -18,17 +18,16 @@
   padding-bottom: 1rem;
 }
 
-::ng-deep.p-button,
-.p-button-text {
-  background-color: $bg-white;
-  color: $font-color;
-  text-align: left;
-  box-shadow: none;
-  outline: none;
-  border: none;
-  border-radius: 0;
-  padding: 0 1rem 1rem;
-  width: 100%;
+::ng-deep.nav-button {
+  background-color: $bg-white !important;
+  color: $font-color !important;
+  text-align: left !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 1rem 1rem !important;
+  width: 100% !important;
 
   &:enabled &:hover,
   &:focus,
@@ -38,10 +37,7 @@
   &:active,
   &:target,
   &:enabled:hover {
-    color: $font-color-hover;
-    background-color: $bg-white;
-    box-shadow: none;
-    outline: none;
-    border: none;
+    color: $font-color-hover !important;
+    background-color: $bg-white !important;
   }
 }
