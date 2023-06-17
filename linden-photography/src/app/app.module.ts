@@ -8,9 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FooterComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
@@ -20,6 +22,7 @@ import { RouterModule } from '@angular/router';
     NavbarModule,
     CommonModule,
     FormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
