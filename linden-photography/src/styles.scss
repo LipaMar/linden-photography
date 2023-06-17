@@ -26,3 +26,34 @@ body {
     }
   }
 }
+
+.p-galleria.p-galleria-indicator-onitem .p-galleria-indicators {
+  background: none;
+}
+
+.nav-button {
+  background-color: white;
+  color: $font-color;
+  text-align: left;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  padding: 0 1rem 1rem;
+  width: 100%;
+
+  &:enabled &:hover,
+  &:focus,
+  &:visited,
+  &:focus-within,
+  &:focus-visible,
+  &:active,
+  &:target,
+  &:enabled:hover {
+    color: $font-color-hover;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: white;
+  }
+}
