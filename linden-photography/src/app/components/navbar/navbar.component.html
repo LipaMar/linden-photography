@@ -1,15 +1,14 @@
-<div routerLink="/home" class="header animate">
-  <img
-    src="https://lipamar.github.io/linden-photography/assets/logo.png"
-    alt="logo"
-  />
-</div>
-
 <div class="menu animate">
   <ng-container *ngFor="let item of menu; index as i">
     <div nz-dropdown [nzDropdownMenu]="item.options ? dropdown : null">
       <ng-container
-        *ngTemplateOutlet="navbutton; context: { item, mouseover: true }"
+        *ngTemplateOutlet="navbutton; context: { item, mouseover: true,  class: 'nav-button' }"
+      />
+    </div>
+    <div routerLink="/home" class="animate" *ngIf="i === 1">
+      <img
+        src="https://lipamar.github.io/linden-photography/assets/logo.png"
+        alt="logo"
       />
     </div>
   </ng-container>
@@ -18,14 +17,14 @@
 <nz-dropdown-menu #dropdown="nzDropdownMenu">
   <div class="d-flex flex-column">
     <ng-container *ngFor="let item of options; index as i">
-      <ng-container *ngTemplateOutlet="navbutton; context: { item }" />
+      <ng-container *ngTemplateOutlet="navbutton; context: { item,  class: 'dropdown-button'}" />
     </ng-container>
   </div>
 </nz-dropdown-menu>
 
-<ng-template #navbutton let-item="item" let-mouseover="mouseover">
+<ng-template #navbutton let-item="item" let-mouseover="mouseover" let-class="class">
   <p-button
-    styleClass="nav-button"
+    [styleClass]="class"
     [label]="item.label"
     [routerLink]="item.routerLink"
     (mouseover)="mouseover ? setOptions(item.options) : null"

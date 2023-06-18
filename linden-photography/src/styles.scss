@@ -7,6 +7,33 @@
 // primeNg
 @import "/src/assets/scss/primeng.scss";
 
+%white-button {
+  background-color: white;
+  color: $font-color;
+  text-align: left;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  padding: 1rem 2rem;
+  margin: 0;
+
+  &:enabled &:hover,
+  &:focus,
+  &:visited,
+  &:focus-within,
+  &:focus-visible,
+  &:active,
+  &:target,
+  &:enabled:hover {
+    color: $font-color-hover;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: white;
+  }
+}
+
 html,
 body {
   height: 100vh;
@@ -32,28 +59,12 @@ body {
 }
 
 .nav-button {
-  background-color: white;
-  color: $font-color;
-  text-align: left;
-  box-shadow: none;
-  outline: none;
-  border: none;
-  border-radius: 0;
-  padding: 0 1rem 1rem;
-  width: 100%;
+  @extend %white-button;
+}
 
-  &:enabled &:hover,
-  &:focus,
-  &:visited,
-  &:focus-within,
-  &:focus-visible,
-  &:active,
-  &:target,
-  &:enabled:hover {
-    color: $font-color-hover;
-    outline: none;
-    border: none;
-    box-shadow: none;
-    background-color: white;
-  }
+.dropdown-button {
+  @extend %white-button;
+  padding: 0 2rem 1.5rem 2rem;
+  white-space: pre-line;
+  width: 100%;
 }
