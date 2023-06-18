@@ -17,13 +17,12 @@ export class NavbarComponent {
       options: [
         { label: 'Sesja Portretowa', routerLink: '/' },
         { label: 'Chrzest Święty', routerLink: '/' },
-        { label: 'Urodziny/Osiemnastka', routerLink: '/' },
-        { label: 'Studiówka/Półmetek', routerLink: '/' },
+        { label: 'Urodziny /\nOsiemnastka', routerLink: '/' },
+        { label: 'Studiówka /\nPółmetek', routerLink: '/' },
         { label: 'Komunia Święta', routerLink: '/' },
       ],
     },
     { label: 'O mnie', routerLink: '/aboutMe' },
-    { label: 'Strefa klienta' },
     { label: 'Kontakt', routerLink: '/contact' },
   ];
   options: any;

@@ -1,20 +1,14 @@
 @import "./../../../assets/scss/variables.scss";
 
-.header {
-  display: flex;
-  justify-content: center;
-  padding: 1.5rem 1rem 1rem;
-
-  img {
-    width: 150px;
-  }
-}
-
 .menu {
   display: flex;
   justify-content: center;
+  vertical-align: middle;
   align-items: center;
-  gap: 2rem;
-  padding-bottom: 1rem;
-}
+  padding: 2rem;
 
+  img {
+    width: 150px;
+    margin: 0 2rem;
+  }
+}
