@@ -14,12 +14,13 @@ export class NavbarComponent {
     { label: 'Home', routerLink: '/home' },
     {
       label: 'Portfolio',
+      routerLink: '/portfolio',
       options: [
-        { label: 'Sesja Portretowa', routerLink: '/' },
-        { label: 'Chrzest Święty', routerLink: '/' },
-        { label: 'Urodziny/Osiemnastka', routerLink: '/' },
-        { label: 'Studiówka/Półmetek', routerLink: '/' },
-        { label: 'Komunia Święta', routerLink: '/' },
+        { label: 'Sesja Portretowa', routerLink: '/portfolio' },
+        { label: 'Chrzest Święty', routerLink: '/portfolio' },
+        { label: 'Urodziny/Osiemnastka', routerLink: '/portfolio' },
+        { label: 'Studiówka/Półmetek', routerLink: '/portfolio' },
+        { label: 'Komunia Święta', routerLink: '/portfolio' },
       ],
     },
     { label: 'O mnie', routerLink: '/aboutMe' },

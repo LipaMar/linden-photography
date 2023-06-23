@@ -1,11 +1,11 @@
 <p-galleria
+  *ngIf="$images | async; let images"
   [value]="images"
   [showItemNavigators]="true"
   [showThumbnails]="false"
-  [showIndicators]="true"
+  [showIndicators]="false"
   [changeItemOnIndicatorHover]="true"
   [showIndicatorsOnItem]="true"
-  [circular]="true"
   [autoPlay]="true"
   [indicatorsPosition]="'top'"
   [transitionInterval]="5000"
@@ -14,12 +14,12 @@
   [containerStyle]="{ 'height': '70vh', width: '100vw' }"
 >
   <ng-template pTemplate="item" let-item>
-    <img [src]="item.itemImageSrc" style="height: 70vh; width: 100%; 
-    object-fit: cover;" />
+    <img [src]="item.itemImageSrc" style="height: 70vh; width: 100%;
+    object-fit: cover;"/>
   </ng-template>
   <ng-template pTemplate="thumbnail" let-item>
     <div class="grid grid-nogutter justify-content-center">
-      <img [src]="item.thumbnailImageSrc" style="display: block" />
+      <img [src]="item.thumbnailImageSrc" style="display: block"/>
     </div>
   </ng-template>
 </p-galleria>

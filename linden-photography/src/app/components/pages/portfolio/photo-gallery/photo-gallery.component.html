@@ -1,0 +1,25 @@
+<hr>
+<h2 class="text-center">
+  <ng-content></ng-content>
+</h2>
+<hr>
+<div *ngIf="images" class="d-flex row mb-3">
+  <div *ngFor="let image of images; let index = index" class="d-flex col-md-4 align-content-between my-2">
+    <img [src]="image.thumbnailImageSrc" [alt]="image.alt" (click)="imageClick(index)" class="thumbnail"/>
+  </div>
+</div>
+
+<p-galleria
+  [value]="images"
+  [(visible)]="displayCustom"
+  [(activeIndex)]="activeIndex"
+  [responsiveOptions]="responsiveOptions"
+  [fullScreen]="true"
+  [showThumbnailNavigators]="false"
+  [showItemNavigators]="true"
+  [showThumbnails]="false"
+>
+  <ng-template pTemplate="item" let-item>
+    <img [src]="item.itemImageSrc" class="photo"/>
+  </ng-template>
+</p-galleria>

@@ -1,0 +1,10 @@
+.thumbnail {
+  cursor: pointer;
+  object-fit: cover;
+  width: 100%;
+}
+
+.photo {
+  max-height: 100vh;
+  display: block;
+}

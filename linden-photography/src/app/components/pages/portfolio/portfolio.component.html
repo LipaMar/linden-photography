@@ -1,0 +1,7 @@
+<div class="container w-75">
+  <app-photo-gallery *ngIf="$chrzest | async; let images" [images]="images">Sesja Portretowa</app-photo-gallery>
+  <app-photo-gallery *ngIf="$portret | async; let images" [images]="images">Chrzest Święty</app-photo-gallery>
+  <app-photo-gallery *ngIf="$urodziny | async; let images" [images]="images">Urodziny/Osiemnastka</app-photo-gallery>
+  <app-photo-gallery *ngIf="$studniowka | async; let images" [images]="images">Studiówka/Półmetek</app-photo-gallery>
+  <app-photo-gallery *ngIf="$komunia | async; let images" [images]="images">Komunia Święta</app-photo-gallery>
+</div>
