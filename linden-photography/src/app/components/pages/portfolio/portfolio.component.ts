@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { PhotoService } from '../../../services/photo/photo.service';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
@@ -8,21 +7,11 @@ import { map } from 'rxjs';
   styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent {
-  $chrzest = this.photoService
-    .getHomePagePhotos()
-    .pipe(map((photos) => this.getRandomItem(photos, 3)));
-  $portret = this.photoService
-    .getHomePagePhotos()
-    .pipe(map((photos) => this.getRandomItem(photos, 3)));
-  $urodziny = this.photoService
-    .getHomePagePhotos()
-    .pipe(map((photos) => this.getRandomItem(photos, 3)));
-  $studniowka = this.photoService
-    .getHomePagePhotos()
-    .pipe(map((photos) => this.getRandomItem(photos, 3)));
-  $komunia = this.photoService
-    .getHomePagePhotos()
-    .pipe(map((photos) => this.getRandomItem(photos, 3)));
+  $chrzest = this.photoService.getPortfolioPagePhotos(5);
+  $portret = this.photoService.getPortfolioPagePhotos(3);
+  $urodziny = this.photoService.getPortfolioPagePhotos(2);
+  $studniowka = this.photoService.getPortfolioPagePhotos(9);
+  $komunia = this.photoService.getPortfolioPagePhotos(7);
 
   constructor(private photoService: PhotoService) {}
 
