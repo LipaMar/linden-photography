@@ -28,6 +28,7 @@
     styleClass="nav-button"
     [label]="item.label"
     [routerLink]="item.routerLink"
+    [fragment]="item.fragment"
     (mouseover)="mouseover ? setOptions(item.options) : null"
   />
 </ng-template>

@@ -16,11 +16,31 @@ export class NavbarComponent {
       label: 'Portfolio',
       routerLink: '/portfolio',
       options: [
-        { label: 'Sesja Portretowa', routerLink: '/portfolio' },
-        { label: 'Chrzest Święty', routerLink: '/portfolio' },
-        { label: 'Urodziny/Osiemnastka', routerLink: '/portfolio' },
-        { label: 'Studiówka/Półmetek', routerLink: '/portfolio' },
-        { label: 'Komunia Święta', routerLink: '/portfolio' },
+        {
+          label: 'Sesja Portretowa',
+          routerLink: '/portfolio',
+          fragment: 'portret',
+        },
+        {
+          label: 'Chrzest Święty',
+          routerLink: '/portfolio',
+          fragment: 'chrzest',
+        },
+        {
+          label: 'Urodziny/Osiemnastka',
+          routerLink: '/portfolio',
+          fragment: 'urodziny',
+        },
+        {
+          label: 'Studiówka/Półmetek',
+          routerLink: '/portfolio',
+          fragment: 'studniowka',
+        },
+        {
+          label: 'Komunia Święta',
+          routerLink: '/portfolio',
+          fragment: 'komunia',
+        },
       ],
     },
     { label: 'O mnie', routerLink: '/aboutMe' },

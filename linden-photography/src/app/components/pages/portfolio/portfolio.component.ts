@@ -1,22 +1,68 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { PhotoService } from '../../../services/photo/photo.service';
+import { ActivatedRoute } from '@angular/router';
+
+export type PortfolioTypes =
+  | 'chrzest'
+  | 'portret'
+  | 'urodziny'
+  | 'studniowka'
+  | 'komunia';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements AfterViewInit {
+  @ViewChild('chrzest', { read: ElementRef })
+  chrzestElement?: ElementRef;
+  @ViewChild('portret', { read: ElementRef })
+  portretElement?: ElementRef;
+  @ViewChild('urodziny', { read: ElementRef })
+  urodzinyElement?: ElementRef;
+  @ViewChild('studniowka', { read: ElementRef })
+  studniowkaElement?: ElementRef;
+  @ViewChild('komunia', { read: ElementRef })
+  komuniaElement?: ElementRef;
+
   $chrzest = this.photoService.getPortfolioPagePhotos(5);
   $portret = this.photoService.getPortfolioPagePhotos(3);
   $urodziny = this.photoService.getPortfolioPagePhotos(2);
   $studniowka = this.photoService.getPortfolioPagePhotos(9);
   $komunia = this.photoService.getPortfolioPagePhotos(7);
 
-  constructor(private photoService: PhotoService) {}
+  constructor(
+    private photoService: PhotoService,
+    private route: ActivatedRoute
+  ) {}
 
-  private getRandomItem(array: any[], numberOfItems: number): any[] {
-    const shuffled = array.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, numberOfItems);
+  ngAfterViewInit() {
+    this.route.fragment.subscribe((value) => {
+      let scrollTo;
+      switch (value as PortfolioTypes) {
+        case 'chrzest':
+          scrollTo = this.chrzestElement;
+          break;
+        case 'komunia':
+          scrollTo = this.komuniaElement;
+          break;
+        case 'studniowka':
+          scrollTo = this.studniowkaElement;
+          break;
+        case 'portret':
+          scrollTo = this.portretElement;
+          break;
+        case 'urodziny':
+          scrollTo = this.urodzinyElement;
+          break;
+      }
+      if (scrollTo) {
+        scrollTo.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    });
   }
 }
