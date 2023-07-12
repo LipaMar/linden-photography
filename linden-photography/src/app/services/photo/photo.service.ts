@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Photo } from './photo.model';
-import { Observable, of } from 'rxjs';
+import { Photo, PicsumPhoto } from './photo.model';
+import { map, Observable, of } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhotoService {
-  getPortfolioPagePhotos(numberOfPhotos: number): Observable<Photo[]> {
-    const arr = this.getRandomPhotos(numberOfPhotos);
-    return of(arr);
+  constructor(private http: HttpClient) {}
+
+  getPortfolioPagePhotos(page: number, limit: number): Observable<Photo[]> {
+    let params = new HttpParams().set('page', page).set('limit', limit);
+    return this.http
+      .get<PicsumPhoto[]>('https://picsum.photos/v2/list', { params })
+      .pipe(map((photos) => this.mapToPhotos(photos)));
   }
 
   getHomePagePhotos(): Observable<Photo[]> {
@@ -31,18 +36,15 @@ export class PhotoService {
     ]);
   }
 
-  private getRandomPhotos(numberOfPhotos: number): Photo[] {
-    const arr = [];
-    for (let i = 0; i < numberOfPhotos; i++) {
-      let height = Math.round(1080 + Math.random() * (1920 - 1080));
-      let length = Math.round(1080 + Math.random() * (1920 - 1080));
-      arr.push({
-        itemImageSrc: `https://picsum.photos/${height}/${length}`,
-        thumbnailImageSrc: `https://picsum.photos/${height}/${length}`,
-        alt: 'Random photo ' + (i + 1),
-        title: 'Random photo ' + (i + 1),
-      });
-    }
-    return arr;
+  private mapToPhotos(photos: PicsumPhoto[]) {
+    return photos.map((p) => {
+      const { download_url } = p;
+      return {
+        title: 'image',
+        alt: 'image',
+        itemImageSrc: download_url,
+        thumbnailImageSrc: download_url,
+      } as Photo;
+    });
   }
 }

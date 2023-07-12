@@ -26,11 +26,11 @@ export class PortfolioComponent implements AfterViewInit {
   @ViewChild('komunia', { read: ElementRef })
   komuniaElement?: ElementRef;
 
-  $chrzest = this.photoService.getPortfolioPagePhotos(5);
-  $portret = this.photoService.getPortfolioPagePhotos(3);
-  $urodziny = this.photoService.getPortfolioPagePhotos(2);
-  $studniowka = this.photoService.getPortfolioPagePhotos(9);
-  $komunia = this.photoService.getPortfolioPagePhotos(7);
+  $chrzest = this.photoService.getPortfolioPagePhotos(0, 5);
+  $portret = this.photoService.getPortfolioPagePhotos(10, 5);
+  $urodziny = this.photoService.getPortfolioPagePhotos(20, 5);
+  $studniowka = this.photoService.getPortfolioPagePhotos(30, 5);
+  $komunia = this.photoService.getPortfolioPagePhotos(40, 5);
 
   constructor(
     private photoService: PhotoService,

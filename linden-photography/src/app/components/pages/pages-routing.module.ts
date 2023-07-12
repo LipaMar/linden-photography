@@ -22,6 +22,11 @@ const routes: Routes = [
     path: 'portfolio',
     component: PortfolioComponent,
   },
+  {
+    path: '**',
+    pathMatch: 'full',
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({
