@@ -17,8 +17,6 @@ export class EmailSendService {
       responseType: 'text',
     };
     const url = 'https://formsubmit.co/41eefae3b21ffb29c4d31d39d3e3d7b8';
-    contactRequest._captcha = 'false';
-    contactRequest._template = 'table';
     return this.httpClient.post<any>(url, contactRequest, httpOptions);
   }
 }

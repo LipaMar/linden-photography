@@ -7,6 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { PagesModule } from './components/pages/pages.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FooterComponent } from './components/footer/footer.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 describe('AppComponent', () => {
   beforeEach(() =>
@@ -19,9 +23,12 @@ describe('AppComponent', () => {
         BrowserAnimationsModule,
         RouterModule.forRoot([]),
         NavbarModule,
+        FormsModule,
+        HttpClientTestingModule,
+        FontAwesomeModule
       ],
       providers: [],
-      declarations: [AppComponent],
+      declarations: [AppComponent, FooterComponent],
     })
   );
 

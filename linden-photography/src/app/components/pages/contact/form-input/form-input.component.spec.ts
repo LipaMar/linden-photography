@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormInputComponent } from './form-input.component';
+import { FormsModule } from '@angular/forms';
 
 describe('FormInputComponent', () => {
   let component: FormInputComponent;
@@ -8,7 +9,8 @@ describe('FormInputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FormInputComponent]
+      declarations: [FormInputComponent],
+      imports: [FormsModule],
     });
     fixture = TestBed.createComponent(FormInputComponent);
     component = fixture.componentInstance;

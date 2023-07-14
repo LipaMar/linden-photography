@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -9,6 +10,7 @@ describe('FooterComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [FooterComponent],
+      imports: [FontAwesomeModule],
     });
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
