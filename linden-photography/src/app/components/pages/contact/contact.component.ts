@@ -1,5 +1,5 @@
 import { Component, HostBinding } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactForm, ContactRequest } from './contact-form';
 import { pageAnimations } from '../../../animations';
 import { EmailSendService } from '../../../services/email/email-send.service';
@@ -12,14 +12,17 @@ import { EmailSendService } from '../../../services/email/email-send.service';
 })
 export class ContactComponent {
   @HostBinding('@pageAnimations')
-  form: FormGroup<ContactForm> = new FormGroup<ContactForm>({
-    name: new FormControl(null, [Validators.required]),
-    email: new FormControl([Validators.required, Validators.email]),
-    phoneNr: new FormControl([Validators.pattern('d{9}')]),
-    topic: new FormControl([Validators.required]),
+  form: FormGroup<ContactForm> = this.formBuilder.group({
+    name: [null, Validators.required],
+    email: [null, [Validators.required, Validators.email]],
+    phoneNr: [null, Validators.pattern('d{9}')],
+    topic: [null, Validators.required],
   });
 
-  constructor(private emailService: EmailSendService) {}
+  constructor(
+    private emailService: EmailSendService,
+    private formBuilder: FormBuilder
+  ) {}
 
   submitForm() {
     const request = this.mapToRequest(this.form);
