@@ -1,17 +1,32 @@
 @import "/src/assets/scss/variables.scss";
 
-.container {
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 100%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  height: 40px;
+  max-width: 800px;
+  min-height: 40px;
   background-color: $bg-white;
   color: $dark-gray;
-  position: fixed;
-  bottom: 0;
+}
 
-  > div {
-    margin: 0 15px;
+@media screen and (max-width: 600px) {
+  footer {
+    padding: 0 1rem;
+    div {
+      flex-basis: 50%;
+      min-width: fit-content;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  footer {
+    padding: 0 1rem;
+    div {
+      flex-basis: 100%;
+      min-width: fit-content;
+    }
   }
 }
 
