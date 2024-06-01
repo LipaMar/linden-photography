@@ -1,20 +1,38 @@
 @import "./../../../assets/scss/variables.scss";
 
-.header {
-  display: flex;
-  justify-content: center;
-  padding: 1.5rem 1rem 1rem;
+img {
+  max-width: 200px;
+}
 
-  img {
-    width: 150px;
+@media screen and (min-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem 1rem;
+    gap: 1rem;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 1rem;
+    max-width: 1000px;
+    width: 100%;
+  }
+  .menu-item {
+    margin: auto;
   }
 }
 
-.menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding-bottom: 1rem;
+@media not screen and (min-width: 600px) {
+  header {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.5rem 1rem 1rem;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 }
+
 

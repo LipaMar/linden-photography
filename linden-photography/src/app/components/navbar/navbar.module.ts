@@ -1,4 +1,4 @@
-import { NgZorroModule } from './../../shared/modules/ngzorro.module';
+import { NgZorroModule } from '../../shared/modules/ngzorro.module';
 import { NavbarComponent } from './navbar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

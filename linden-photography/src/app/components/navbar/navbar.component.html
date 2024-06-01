@@ -1,24 +1,26 @@
-<div routerLink="/home" class="header animate">
-  <img
-    src="https://lipamar.github.io/linden-photography/assets/logo.png"
-    alt="logo"
-  />
-</div>
+<header class="animate">
+  <div routerLink="/home">
+    <img
+      src="https://lipamar.github.io/linden-photography/assets/logo.png"
+      alt="logo"
+    />
+  </div>
 
-<div class="menu animate">
-  <ng-container *ngFor="let item of menu; index as i">
-    <div nz-dropdown [nzDropdownMenu]="item.options ? dropdown : null">
-      <ng-container
-        *ngTemplateOutlet="navbutton; context: { item, mouseover: true }"
-      />
-    </div>
-  </ng-container>
-</div>
+  <div class="menu">
+    <ng-container *ngFor="let item of menu; index as i">
+      <div class="menu-item" nz-dropdown [nzDropdownMenu]="item.options ? dropdown : null">
+        <ng-container
+          *ngTemplateOutlet="navbutton; context: { item, mouseover: true }"
+        />
+      </div>
+    </ng-container>
+  </div>
+</header>
 
 <nz-dropdown-menu #dropdown="nzDropdownMenu">
   <div class="d-flex flex-column">
     <ng-container *ngFor="let item of options; index as i">
-      <ng-container *ngTemplateOutlet="navbutton; context: { item }" />
+      <ng-container *ngTemplateOutlet="navbutton; context: { item }"/>
     </ng-container>
   </div>
 </nz-dropdown-menu>
