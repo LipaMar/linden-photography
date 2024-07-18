@@ -17,11 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "../docs",
-            "resourcesOutputPath": "../docs/assets",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/linden-photography",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -49,7 +47,6 @@
                   "maximumError": "4kb"
                 }
               ],
-              "baseHref": "/linden-photography/",
               "outputHashing": "all"
             },
             "development": {
