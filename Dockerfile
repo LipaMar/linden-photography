@@ -1,5 +1,5 @@
 # Stage 1: Compile and Build angular codebase
-FROM node:18.20.2 as build
+FROM node:18.17.0 as build
 RUN export NODE_OPTIONS="--max-old-space-size=8192"
 WORKDIR /app
 COPY package.json /app/
