@@ -4,7 +4,7 @@ RUN export NODE_OPTIONS="--max-old-space-size=8192"
 WORKDIR /app
 COPY package.json /app/
 COPY package-lock.json /app/
-RUN npm ci
+RUN npm ci --loglevel verbose
 COPY . /app
 RUN npm run build-prod
 
