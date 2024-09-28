@@ -9,11 +9,12 @@ footer {
   min-height: 40px;
   background-color: $bg-white;
   color: $dark-gray;
+  padding: 10px 1rem;
 }
 
 @media screen and (max-width: 600px) {
   footer {
-    padding: 0 1rem;
+    padding: 10px 1rem;
     div {
       flex-basis: 50%;
       min-width: fit-content;
@@ -22,7 +23,7 @@ footer {
 }
 @media screen and (max-width: 400px) {
   footer {
-    padding: 0 1rem;
+    padding: 10px 1rem;
     div {
       flex-basis: 100%;
       min-width: fit-content;

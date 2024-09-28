@@ -2,15 +2,21 @@ import { Injectable } from '@angular/core';
 import { Photo, PicsumPhoto } from './photo.model';
 import { map, Observable, of } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { PhotoService } from './photo-service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PhotoService {
+export class MockPhotoService implements PhotoService {
   constructor(private http: HttpClient) {}
 
-  getPortfolioPagePhotos(page: number, limit: number): Observable<Photo[]> {
-    let params = new HttpParams().set('page', page).set('limit', limit);
+  getPortfolioPagePhotos(
+    _catalog?: string,
+    limit?: number
+  ): Observable<Photo[]> {
+    let params = new HttpParams()
+      .set('page', Math.floor(Math.random() * 10))
+      .set('limit', limit ?? 5);
     return this.http
       .get<PicsumPhoto[]>('https://picsum.photos/v2/list', { params })
       .pipe(map((photos) => this.mapToPhotos(photos)));

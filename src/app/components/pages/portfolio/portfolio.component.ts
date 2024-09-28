@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { PhotoService } from '../../../services/photo/photo.service';
+import { MockPhotoService } from '../../../services/photo/mock-photo.service';
 import { ActivatedRoute } from '@angular/router';
+import {PhotoService} from "../../../services/photo/photo-service";
 
 export type PortfolioTypes =
   | 'chrzest'
@@ -26,14 +27,14 @@ export class PortfolioComponent implements AfterViewInit {
   @ViewChild('komunia', { read: ElementRef })
   komuniaElement?: ElementRef;
 
-  $chrzest = this.photoService.getPortfolioPagePhotos(0, 5);
-  $portret = this.photoService.getPortfolioPagePhotos(10, 5);
-  $urodziny = this.photoService.getPortfolioPagePhotos(20, 5);
-  $studniowka = this.photoService.getPortfolioPagePhotos(30, 5);
-  $komunia = this.photoService.getPortfolioPagePhotos(40, 5);
+  $chrzest = this.photoService.getPortfolioPagePhotos('chrzest');
+  $portret = this.photoService.getPortfolioPagePhotos('portret');
+  $urodziny = this.photoService.getPortfolioPagePhotos('urodziny');
+  $studniowka = this.photoService.getPortfolioPagePhotos('studniowka');
+  $komunia = this.photoService.getPortfolioPagePhotos('komunia');
 
   constructor(
-    private photoService: PhotoService,
+    private photoService: MockPhotoService,
     private route: ActivatedRoute
   ) {}
 

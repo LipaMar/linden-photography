@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PhotoService } from '../../../services/photo/photo.service';
+import { MockPhotoService } from '../../../services/photo/mock-photo.service';
 
 @Component({
   selector: 'app-home',
@@ -24,5 +24,5 @@ export class HomeComponent {
     },
   ];
 
-  constructor(private photoService: PhotoService) {}
+  constructor(private photoService: MockPhotoService) {}
 }
