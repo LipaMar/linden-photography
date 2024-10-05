@@ -16,4 +16,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 #COPY --from=linden-photography /app/dist /usr/share/nginx/html/linden-photography
 COPY --from=build /app/dist /usr/share/nginx/html
 
+RUN mkdir -p /usr/share/nginx/html/public/photos
+
 EXPOSE 4200
