@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Photo, PicsumPhoto } from './photo.model';
-import { map, Observable, of } from 'rxjs';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { PhotoService } from './photo-service';
+import {Injectable} from '@angular/core';
+import {Photo, PicsumPhoto} from './photo.model';
+import {map, Observable, of} from 'rxjs';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {PhotoService} from './photo-service';
 
 @Injectable({
   providedIn: 'root',
